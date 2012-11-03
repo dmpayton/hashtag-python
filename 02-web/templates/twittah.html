@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twittah!</title>
+</head>
+<body>
+
+<h1>Twittah</h1>
+<h2>Fetching tweets like it ain't no thang.</h2>
+
+<hr />
+
+<form action="." method="get">
+    <p>
+        <label for="id_username">Username:</label><br />
+        <input type="text" name="username" id="id_username" value="{{ username|default('', true) }}" />
+    </p>
+    <p>
+        <input type="submit" value="Show Tweets!" />
+    </p>
+</form>
+
+{% if tweet_list is defined %}
+    <hr />
+    <h3>Latest tweets for {{ username }}:</h3>
+
+    {% for tweet in tweet_list  %}
+        <p>
+            <strong>{{ tweet.created_at }}</strong><br />
+            {{ tweet.text }}
+        </p>
+    {% else %}
+        <p>Whoops, no tweets to show!</p>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>

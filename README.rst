@@ -56,5 +56,5 @@ of tweets. The following third-party libraries are required:
 * `Jinja2 <http://jinja.pocoo.org/>`_: A full-featured template engine
 * `requests <http://python-requests.org>`_: Dead-simple HTTP requests
 
-To see it in action, simply run ``python app.py`` and open your web browser
-to http://localhost:8080/
+To see it in action, simply run ``python twittah/app.py`` and open your web
+browser to http://localhost:8080/
